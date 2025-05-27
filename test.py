@@ -4,12 +4,6 @@ from unittest.mock import mock_open, patch
 from main import Report
 
 
-import pytest
-from unittest.mock import mock_open, patch
-
-from main import Report
-
-
 # Тестирование конструктора __init__
 def test_init_with_valid_report_type():
     report = Report(["data1.csv"], "payout")
@@ -104,7 +98,7 @@ def test_generate_payout_report():
 # Тестирование вывода данных отчёта в консоль
 def test_run_generates_report(capsys):
     mock_data = """id,email,name,department,hours_worked,hourly_rate
-                1,alice@gmail,Alice,Marketing,40,50"""
+                1,alice@gmail.com,Alice,Marketing,40,50"""
 
     with patch("builtins.open", mock_open(read_data=mock_data)):
         report = Report(["data1.csv"], "payout")

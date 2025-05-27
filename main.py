@@ -90,7 +90,7 @@ class Report:
 
 def main():
     try:
-        parser = argparse.ArgumentParser(description='Описан')
+        parser = argparse.ArgumentParser(description="Генератор отчётов из csv-файлов")
         parser.add_argument('files', nargs='+', help="Пути к csv файлам")
         parser.add_argument('--report', type=str, help='Тип отчёта')
         args = parser.parse_args()

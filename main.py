@@ -47,7 +47,10 @@ class Report:
             report_row['name'] = row['name']
             report_row['hours_worked'] = row['hours_worked']
             report_row['rate'] = str(self.get_rate(row))
-            report_row['payout'] = str(self.get_rate(row)*int(row['hours_worked']))
+            report_row['payout'] = str(
+                self.get_rate(row) *
+                int(row['hours_worked'])
+            )
             report_data.append(report_row)
         return report_data
 
@@ -90,7 +93,9 @@ class Report:
 
 def main():
     try:
-        parser = argparse.ArgumentParser(description="Генератор отчётов из csv-файлов")
+        parser = argparse.ArgumentParser(
+            description="Генератор отчётов из csv-файлов"
+        )
         parser.add_argument('files', nargs='+', help="Пути к csv файлам")
         parser.add_argument('--report', type=str, help='Тип отчёта')
         args = parser.parse_args()
